@@ -3,7 +3,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -22,10 +22,11 @@ call plug#end()
 
 " General
 
-colorscheme dracula
 syntax on
-let g:airline_theme='deus'
+autocmd vimenter * ++nested colorscheme gruvbox
+"let g:airline_theme='gruvbox'
 
+set background=dark
 
 set termguicolors
 set noerrorbells
@@ -48,6 +49,8 @@ set signcolumn=yes
 
 " Mapping
 let mapleader = " " 
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F2> :UndotreeToggle<CR>
 

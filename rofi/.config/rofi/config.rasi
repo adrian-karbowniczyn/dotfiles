@@ -5,49 +5,50 @@
  *******************************************************************************/
 
 * {
+    /* Theme settings */
     highlight: bold italic;
     scrollbar: true;
 
-    palette-bg0:     #2E333E;
-    palette-bg1:     #404552;
-    palette-fg0:     #c6c8d1;
-    palette-highlight: #6552ab;
-    palette-active: #525AAB;
-    palette-warning: #B65FB8;
+    /* Gruvbox dark colors */
+    gruvbox-dark-bg0:          #282828;
+    gruvbox-dark-bg0-soft:     #32302f;
+    gruvbox-dark-bg3:          #665c54;
+    gruvbox-dark-fg0:          #fbf1c7;
+    gruvbox-dark-fg1:          #ebdbb2;
+    gruvbox-dark-red-dark:     #cc241d;
+    gruvbox-dark-red-light:    #fb4934;
+    gruvbox-dark-yellow-dark:  #d79921;
+    gruvbox-dark-yellow-light: #fabd2f;
+    gruvbox-dark-gray:         #a89984;
 
-    /* Base colors */
-    background:                  @palette-bg0;
+    /* Theme colors */
+    background:                  @gruvbox-dark-bg0;
     background-color:            @background;
-    foreground:                  @palette-fg0;
+    foreground:                  @gruvbox-dark-fg1;
+    border-color:                @gruvbox-dark-gray;
+    separatorcolor:              @border-color;
+    scrollbar-handle:            @border-color;
 
-    /* Normal colors */
     normal-background:           @background;
     normal-foreground:           @foreground;
-    alternate-normal-background: @palette-bg1;
+    alternate-normal-background: @gruvbox-dark-bg0-soft;
     alternate-normal-foreground: @foreground;
-    selected-normal-background:  @palette-highlight;
-    selected-normal-foreground:  @palette-fg0;
+    selected-normal-background:  @gruvbox-dark-bg3;
+    selected-normal-foreground:  @gruvbox-dark-fg0;
 
-    /* Active window colors */
-    active-background:           @palette-active;
-    active-foreground:           @normal-foreground;
-    alternate-active-background: @alternate-normal-background;
+    active-background:           @gruvbox-dark-yellow-dark;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
-    selected-active-background:  @active-background;
+    selected-active-background:  @gruvbox-dark-yellow-light;
     selected-active-foreground:  @active-foreground;
 
-    /* Urgent colors */
-    urgent-background:           @background;
-    urgent-foreground:           @palette-warning;
-    alternate-urgent-background: @alternate-normal-background;
+    urgent-background:           @gruvbox-dark-red-dark;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @urgent-foreground;
-    selected-urgent-background:  @urgent-foreground;
-    selected-urgent-foreground:  @normal-background;
-
-    /* Other colors */
-    border-color:                @palette-highlight;
-    separatorcolor:              @border-color;
-    scrollbar-handle:            @palette-highlight;
+    selected-urgent-background:  @gruvbox-dark-red-light;
+    selected-urgent-foreground:  @urgent-foreground;
 }
 
 #window {

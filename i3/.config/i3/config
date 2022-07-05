@@ -39,10 +39,14 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i2status
+bindcode 140 exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+
+# Moving workspaces between screens
+bindsym $mod+p move workspace to output right
 
 # Always float certain windows
 for_window [window_role="About"] floating enable
@@ -223,14 +227,35 @@ gaps top 5
 gaps bottom 5
 gaps horizontal 0
 
+#######
+#THEME#
+#######
 
-# Colors
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #1E0B26 #1E0B26 #ffffff #F26052   #400C37
-client.focused_inactive #1E0B26 #1E0B26 #ffffff #F26052   #1E0B26
-client.unfocused        #1E0B26 #1E0B26 #888888 #F26052   #1E0B26
-client.urgent           #1E0B26 #1E0B26 #ffffff #F26052   #1E0B26
-client.placeholder      #1E0B26 #1E0B26 #ffffff #F26052   #1E0B26
+#start of window title bars & borders section
 
-client.background       #ffffff
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $purple $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+client.urgent           $red $red $white $red $red
+
+#end of window title bars & borders section

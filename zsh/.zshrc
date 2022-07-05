@@ -15,7 +15,7 @@ export ZSH="/home/adrian/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="dracula"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -93,8 +93,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 
 antigen theme romkatv/powerlevel10k
-# Load the theme.
-antigen theme dracula
 
 # Tell Antigen that you're done.
 antigen apply
@@ -133,4 +131,6 @@ export PATH=/home/adrian/.local/bin:$PATH
 if [ -x /usr/bin/git ]; then
     source ~/.git-completion.sh
 fi
+
+
 
