@@ -1,13 +1,14 @@
 
 !! General
-urxvt.scrollBar: false
+URxvt.scrollBar: false
 URxvt.font: xft:MesloLGS NF:size=12
-urxvt.saveLines: 1000000
-urxvt.internalBorder: 12
+URxvt.saveLines: 1000000
+URxvt.cursorBlink: true
+URxvt.internalBorder: 12
 !! Perl extensions
-urxvt.perl-ext-common: default
+URxvt.perl-ext-common: default
 !! Open urls in browser with Control-Click
-urxvt.urlLauncher: /usr/bin/firefox
+URxvt.urlLauncher: /usr/bin/firefox
 
 !! Fix arrows
 URxvt.keysym.Control-Up:     \033[1;5A
