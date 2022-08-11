@@ -1,7 +1,7 @@
 
 !! General
 URxvt.scrollBar: false
-URxvt.font: xft:MesloLGS NF:size=12
+URxvt.font: xft:Hack Nerd Font:size=10
 URxvt.saveLines: 1000000
 URxvt.cursorBlink: true
 URxvt.internalBorder: 12
@@ -9,6 +9,14 @@ URxvt.internalBorder: 12
 URxvt.perl-ext-common: default
 !! Open urls in browser with Control-Click
 URxvt.urlLauncher: /usr/bin/firefox
+
+!!-- Xft settings -- !
+Xft.dpi:        110
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull
+!URxvt.letterSpace: -1
 
 !! Fix arrows
 URxvt.keysym.Control-Up:     \033[1;5A

@@ -5,6 +5,7 @@
  *******************************************************************************/
 
 * {
+    font: "NotoSans Nerd Font 16px";
     /* Theme settings */
     highlight: bold italic;
     scrollbar: true;

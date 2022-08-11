@@ -8,7 +8,9 @@ killall -q polybar
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     MONITOR=$m polybar anarchy --config=$HOME/.config/polybar/config.ini --reload &
+  #  MONITOR=$m polybar top --config=$HOME/.config/polybar/config.ini --reload &
   done
 else
   polybar anarchy --config=$HOME/.config/polybar/config.ini --reload &
+ # polybar top --config=$HOME/.config/polybar/config.ini --reload &
 fi
